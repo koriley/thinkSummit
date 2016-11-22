@@ -1,2 +1,14 @@
 body {
-  background: url("../img/HOMEPhoto.jpg"); }
+  padding: 0px; }
+
+.mother {
+  background: url("../img/HOMEPhoto2.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 400px;
+  height: 800px;
+  margin-top: 0px; }
+  .mother .menuItems img {
+    width: 170px;
+    margin-top: 250px;
+    margin-left: 25px; }

@@ -1,4 +1,19 @@
+body {
+  padding:0px;
+}
 
-body{
-  background:url('../img/HOMEPhoto.jpg');
+.mother {
+    background: url('../img/HOMEPhoto2.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width:400px;
+    height:800px;
+    margin-top:0px;
+    .menuItems{
+      img{
+        width:170px;
+        margin-top:250px;
+        margin-left:25px;
+      }
+    }
 }
