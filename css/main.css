@@ -8,17 +8,22 @@ body {
   background-repeat: no-repeat;
   width: 400px;
   height: 600px;
-  margin-top: 0; }
+  margin-top: 0;
+  position: fixed;
+  top: 0;
+  background-attachment: fixed; }
   .mother .header img {
     width: 375px; }
-  .mother .menuItems div:nth-child(1) {
-    padding-top: 15px; }
-  .mother .menuItems div:nth-child(even) {
-    padding-left: 25px; }
-  .mother .menuItems div img {
-    width: 170px;
-    margin-left: 25px;
-    margin-bottom: 5px; }
+  .mother .menuItems div {
+    cursor: pointer; }
+    .mother .menuItems div:nth-child(1) {
+      padding-top: 15px; }
+    .mother .menuItems div:nth-child(even) {
+      padding-left: 25px; }
+    .mother .menuItems div img {
+      width: 170px;
+      margin-left: 25px;
+      margin-bottom: 5px; }
   .mother .footContent {
     font-family: "Oswald", sans-serif;
     color: white;
@@ -27,3 +32,12 @@ body {
     margin-top: 15px;
     margin-right: 30px;
     font-size: 1.5em; }
+
+.details {
+  width: 400px;
+  height: 600px;
+  margin-top: 0;
+  position: fixed;
+  top: 0;
+  display: none;
+  background-color: white; }
