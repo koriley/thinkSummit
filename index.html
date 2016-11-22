@@ -50,61 +50,67 @@
         <div class="container">
             <div class="row">
                 <div class="footContent">
-                  #417THINKSUMMIT<br/>
-                  january 13<br/>
-                  springfield art museum
+                    #417THINKSUMMIT<br/> january 13<br/> springfield art museum
 
                 </div>
             </div>
         </div>
     </div>
     <div class="details page">
+        <div class="container">
+            <div class="row">
+                <div class="header">
+                    <img src="img/DETAILsphoto.png" />
+                </div>
+            </div>
+        </div>
 
-    </div>
 
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
 
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <script>
+            var screenWidth = jQuery(window).width();
+            var screenHeight = jQuery(window).height();
+            jQuery(".page").css({
+                'background-size': screenWidth + 'px' + screenHeight + 'px',
+                'width': screenWidth + 'px',
+                'height': screenHeight + 'px'
 
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-    <script>
-        var screenWidth = jQuery(window).width();
-        var screenHeight = jQuery(window).height();
-        jQuery(".page").css({
-            'background-size': screenWidth + 'px' + screenHeight + 'px',
-            'width': screenWidth + 'px',
-            'height': screenHeight + 'px'
+            });
 
-        });
-
-        jQuery('.link').on('touchestart, click', function(){
-          var page = jQuery(this).attr('name');
-          //console.log("."+page);
-          jQuery("."+page).toggle("slide", {
+            jQuery('.link').on('touchestart, click', function() {
+                var page = jQuery(this).attr('name');
+                //console.log("."+page);
+                jQuery("." + page).toggle("slide", {
                     easing: "swing",
                     direction: "right"
 
                 }, 1000);
-        });
-        //this is a script I found on the internet to stop zooming
-        //Apple, in iOS10, has decided to ignore 'user-scalable=no'
-        document.documentElement.addEventListener('touchstart', function(event) {
-            if (event.touches.length > 1) {
-                event.preventDefault();
+            });
+            if (screenWidth >= 750) {
+                //window.location.replace("http://www.biz417.com/Think-Summit/index.php");
             }
-        }, false);
+            //this is a script I found on the internet to stop zooming
+            //Apple, in iOS10, has decided to ignore 'user-scalable=no'
+            document.documentElement.addEventListener('touchstart', function(event) {
+                if (event.touches.length > 1) {
+                    event.preventDefault();
+                }
+            }, false);
 
-        var lastTouchEnd = 0;
-        document.documentElement.addEventListener('touchend', function(event) {
-            var now = (new Date()).getTime();
-            if (now - lastTouchEnd <= 300) {
-                event.preventDefault();
-            }
-            lastTouchEnd = now;
-        }, false);
-    </script>
+            var lastTouchEnd = 0;
+            document.documentElement.addEventListener('touchend', function(event) {
+                var now = (new Date()).getTime();
+                if (now - lastTouchEnd <= 300) {
+                    event.preventDefault();
+                }
+                lastTouchEnd = now;
+            }, false);
+        </script>
 
 </body>
 

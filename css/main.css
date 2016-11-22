@@ -41,3 +41,7 @@ body {
   top: 0;
   display: none;
   background-color: white; }
+  .details .header {
+    width: 375px; }
+    .details .header img {
+      width: 375px; }
