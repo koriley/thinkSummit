@@ -1,19 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+$oswald:'Oswald', sans-serif;
+
+
 body {
-  padding:0px;
+    padding: 0;
 }
 
 .mother {
     background: url('../img/HOMEPhoto2.jpg');
-    background-size: 100% 100%;
+    background-size: 375px 100%;
     background-repeat: no-repeat;
-    width:400px;
-    height:800px;
-    margin-top:0px;
-    .menuItems{
-      img{
-        width:170px;
-        margin-top:250px;
-        margin-left:25px;
-      }
+    width: 400px;
+    height: 600px;
+    margin-top: 0;
+
+    .header {
+        img {
+            width: 375px;
+        }
+    }
+
+    .menuItems {
+        div {
+            &:nth-child(1) {
+                padding-top: 15px;
+            }
+
+            &:nth-child(even) {
+                padding-left: 25px;
+            }
+
+            img {
+                width: 170px;
+                margin-left: 25px;
+                margin-bottom: 5px;
+            }
+        }
+    }
+    .footContent{
+      font-family: $oswald;
+      color:white;
+      text-transform: uppercase;
+      text-align:right;
+      margin-top:15px;
+      margin-right:30px;
+      font-size: 1.5em;
     }
 }

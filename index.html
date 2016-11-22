@@ -8,19 +8,14 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <style>
-        body {
-            padding-top: 50px;
-            padding-bottom: 20px;
-        }
-    </style>
+
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/main.css">
 
@@ -31,11 +26,34 @@
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-    <div class="container">
-        <div class="row">
-            <div class="mother ">
+    <div class="mother ">
+        <div class="container">
+            <div class="row">
+                <div class="header">
+                    <img src="img/ThinkSummit16-microsite-footer.png" />
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+
                 <div class="menuItems">
-<img src="img/DETAILSbutton.png" />
+                    <div style="width:100%"><img src="img/DETAILSbutton.png" /></div>
+                    <div style="width:100%"><img src="img/AGENDAbutton.png" /></div>
+                    <div style="width:100%"><img src="img/SPEAKERSbutton.png" /></div>
+                    <div style="width:100%"><img src="img/TICKETStext.png" /></div>
+                    <div style="width:100%"><img src="img/SPONSORSbutton.png" /></div>
+
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="footContent">
+                  #417THINKSUMMIT<br/>
+                  january 13<br/>
+                  springfield art museum
+
                 </div>
             </div>
         </div>
@@ -47,7 +65,33 @@
 
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        var screenWidth = jQuery(window).width();
+        var screenHeight = jQuery(window).height();
+        jQuery(".mother").css({
+            'background-size': screenWidth + 'px' + screenHeight + 'px',
+            'width': screenWidth + 'px',
+            'height': screenHeight + 'px'
+        });
 
+
+        //this is a script I found on the internet to stop zooming
+        //Apple, in iOS10, has decided to ignore 'user-scalable=no'
+        document.documentElement.addEventListener('touchstart', function(event) {
+            if (event.touches.length > 1) {
+                event.preventDefault();
+            }
+        }, false);
+
+        var lastTouchEnd = 0;
+        document.documentElement.addEventListener('touchend', function(event) {
+            var now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+    </script>
 
 </body>
 
