@@ -11,13 +11,17 @@
 
     <title></title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="css/addtohomescreen.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <link rel="stylesheet" href="css/main.css">
+
 
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
@@ -26,7 +30,7 @@
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-    <div class="mother page">
+    <div class="mother">
         <div class="container">
             <div class="row">
                 <div class="header">
@@ -134,23 +138,30 @@
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script src="js/vendor/bootstrap.min.js"></script>
-
+    <script src="js/vendor/addtohomescreen.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
     <script>
+        addToHomescreen.removeSession();
+        addToHomescreen({
+            maxDisplayCount: 0,
+            mandatory: false
+        });
         var screenWidth = jQuery(window).width();
         var screenHeight = jQuery(window).height();
+        var page;
         jQuery(".mother").css({
             'background-size': screenWidth + 'px ' + screenHeight + 'px',
             'width': screenWidth + 'px',
-            'height':screenHeight+'px'
+            'height': screenHeight + 'px'
 
         });
 
         jQuery('.link').on('touchestart, click', function() {
-          jQuery('.mother').fadeToggle("slow");
-            var page = jQuery(this).attr('name');
+            jQuery('.mother').fadeToggle("slow");
+            page = jQuery(this).attr('name');
             //console.log("."+page);
             jQuery("." + page).toggle("slide", {
                 easing: "swing",
@@ -158,6 +169,12 @@
 
             }, 500);
             //jQuery('.mother').toggle();
+        });
+  //  alert(page);
+
+        jQuery(".page").on("swiperight", function() {
+          //alert("here!");
+jQuery(this).find('.link').trigger("click");
         });
         if (screenWidth >= 750) {
             //window.location.replace("http://www.biz417.com/Think-Summit/index.php");
