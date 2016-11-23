@@ -76,7 +76,7 @@ ul {
 
     .header {
         width: 375px;
-        position: fixed;
+        position: relative;
 
         img {
             width: 375px;
@@ -93,9 +93,10 @@ ul {
         }
 
         .escape {
-            position: absolute;
-            top: 15px;
+            position: fixed;
+            top: 5px;
             right: 15px;
+            z-index:50;
 
             img {
                 width: 55px;
@@ -116,10 +117,9 @@ ul {
 
     .detailMother {
         //  text-align:center;
-        margin-top: 275px;
+        //margin-top: 275px;
         margin-left: 10px;
-        overflow: scroll;
-        overflow-x: hidden;
+
 
         .detailList {
             li {
@@ -138,7 +138,7 @@ ul {
     height: 600px;
     margin-top: 0;
     position: relative;
-    top: 5px;
+    top: 0;
     //background-attachment: fixed;
       display: none;
     background-color: white;
@@ -148,7 +148,7 @@ ul {
 
     .header {
         width: 375px;
-        position: fixed;
+        position: relative;
 
         img {
             width: 375px;
@@ -156,7 +156,7 @@ ul {
 
         .logo {
             position: absolute;
-            top: 0px;
+            top: 75px;
             left: 10px;
 
             img {
@@ -165,9 +165,10 @@ ul {
         }
 
         .escape {
-            position: absolute;
-            top: 15px;
+            position: fixed;
+            top: 5px;
             right: 15px;
+            z-index:50;
 
             img {
                 width: 55px;
@@ -188,10 +189,9 @@ ul {
 
     .agendaMother {
         //  text-align:center;
-        margin-top: 295px;
+        //margin-top: 275px;
         margin-left: 10px;
-        overflow: scroll;
-        overflow-x: hidden;
+
 
         .agendaList {
             li {
@@ -201,4 +201,137 @@ ul {
             }
         }
     }
+}
+
+.speakers {
+    //background-size: 375px 100%;
+    //background-repeat: no-repeat;
+    //width: 400px;
+    height: 600px;
+    margin-top: 0;
+    position: relative;
+    top: 0;
+    //background-attachment: fixed;
+      display: none;
+    background-color: white;
+    overflow: scroll;
+    overflow-x: hidden;
+    padding-bottom: 15px;
+
+    .header {
+        width: 375px;
+        position: relative;
+
+        img {
+            width: 375px;
+        }
+
+        .logo {
+            position: absolute;
+            top: 75px;
+            right: 10px;
+
+            img {
+                width: 195px;
+            }
+        }
+
+        .escape {
+            position: fixed;
+            top: 5px;
+            right: 15px;
+            z-index:50;
+
+            img {
+                width: 55px;
+            }
+        }
+
+        .yellowBar {
+            width: 100%;
+            height: 55px;
+            background: $thinkYellow;
+            text-align: center;
+z-index: 100;
+            img {
+                width: 170px;
+            }
+        }
+    }
+
+    .speakerProfiles{
+    width:100%;
+    display:flex;
+    flex-wrap: wrap;
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+    margin-bottom:10px;
+    text-align:center;
+    //border:1px solid red;
+    .speaker{
+        margin-top:20px;
+        margin-bottom:20px;
+        margin-left:10px;
+        height:200px;
+        background:#f8d2a6;
+        width:200px;
+        @media screen and (max-width:400px){
+            width:150px !important;
+            height:150px !important;
+            margin-top:5px !important;
+            margin-bottom:5px !important;
+            margin-left:5px !important;
+        }
+
+        .img{
+            width:inherit;
+            height:inherit;
+            background:#f8d2a6;
+            position:relative;
+            img{
+              width:150px;
+            }
+            .speakerName{
+                display:none;
+                width:inherit;
+                height:inherit;
+                background:rgba(237,233,41, 0.9);
+                position:absolute; top:0;
+                .innerText{
+                    position:relative; //top:175px;
+                    @media screen and (max-width:400px){
+                        //top:125px;
+                    }
+                    .theSpeakerName{
+                       // margin-top:10px;
+                       padding-top:10px;
+                        font-size:24px;
+                        line-height:25px;
+
+                    }
+                    .speakerCompany{
+                        font-size:20px;
+                        font-style: italic;
+                        padding-top:25px;
+                        padding-bottom:25px;
+                        line-height:25px;
+                        @media screen and (max-width:400px){
+                            font-size:15px;
+                       padding-top:5px;
+                        padding-bottom:5px;
+                    }
+                    }
+                    .speakerDesc{
+                        font-size:16px;
+                         @media screen and (max-width:400px){
+                            font-size:10px;
+                            line-height:15px;
+
+                    }
+                    }
+                }
+            }
+        }
+    }
+}
 }
