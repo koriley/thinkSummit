@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Oswald");
 body {
-  padding: 0; }
+  padding: 0;
+  background: white; }
+
+ul {
+  list-style-image: url("../img/arrow.png"); }
 
 .mother {
   background: url("../img/HOMEPhoto2.jpg");
@@ -34,14 +38,89 @@ body {
     font-size: 1.5em; }
 
 .details {
-  width: 400px;
   height: 600px;
   margin-top: 0;
-  position: fixed;
+  position: relative;
   top: 0;
   display: none;
-  background-color: white; }
+  background-color: white;
+  overflow: scroll;
+  overflow-x: hidden;
+  padding-bottom: 15px; }
   .details .header {
-    width: 375px; }
+    width: 375px;
+    position: fixed; }
     .details .header img {
       width: 375px; }
+    .details .header .logo {
+      position: absolute;
+      top: 75px;
+      left: 10px; }
+      .details .header .logo img {
+        width: 255px; }
+    .details .header .escape {
+      position: absolute;
+      top: 15px;
+      right: 15px; }
+      .details .header .escape img {
+        width: 55px; }
+    .details .header .yellowBar {
+      width: 100%;
+      height: 55px;
+      background: #EDE929;
+      text-align: center; }
+      .details .header .yellowBar img {
+        width: 170px; }
+  .details .detailMother {
+    margin-top: 275px;
+    margin-left: 10px;
+    overflow: scroll;
+    overflow-x: hidden; }
+    .details .detailMother .detailList li {
+      text-transform: uppercase;
+      font-size: 2em;
+      padding: 10px; }
+
+.agenda {
+  height: 600px;
+  margin-top: 0;
+  position: relative;
+  top: 5px;
+  display: none;
+  background-color: white;
+  overflow: scroll;
+  overflow-x: hidden;
+  padding-bottom: 15px; }
+  .agenda .header {
+    width: 375px;
+    position: fixed; }
+    .agenda .header img {
+      width: 375px; }
+    .agenda .header .logo {
+      position: absolute;
+      top: 0px;
+      left: 10px; }
+      .agenda .header .logo img {
+        width: 255px; }
+    .agenda .header .escape {
+      position: absolute;
+      top: 15px;
+      right: 15px; }
+      .agenda .header .escape img {
+        width: 55px; }
+    .agenda .header .yellowBar {
+      width: 100%;
+      height: 55px;
+      background: #EDE929;
+      text-align: center; }
+      .agenda .header .yellowBar img {
+        width: 170px; }
+  .agenda .agendaMother {
+    margin-top: 295px;
+    margin-left: 10px;
+    overflow: scroll;
+    overflow-x: hidden; }
+    .agenda .agendaMother .agendaList li {
+      text-transform: uppercase;
+      font-size: 2em;
+      padding: 10px; }

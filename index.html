@@ -39,7 +39,7 @@
 
                 <div class="menuItems">
                     <div class="link" name="details" style="width:100%"><img src="img/DETAILSbutton.png" /></div>
-                    <div style="width:100%"><img src="img/AGENDAbutton.png" /></div>
+                    <div class="link" name="agenda" style="width:100%"><img src="img/AGENDAbutton.png" /></div>
                     <div style="width:100%"><img src="img/SPEAKERSbutton.png" /></div>
                     <div style="width:100%"><img src="img/TICKETStext.png" /></div>
                     <div style="width:100%"><img src="img/SPONSORSbutton.png" /></div>
@@ -56,61 +56,129 @@
             </div>
         </div>
     </div>
-    <div class="details page">
+    <div class="details page" style="">
         <div class="container">
             <div class="row">
                 <div class="header">
                     <img src="img/DETAILsphoto.png" />
+                    <div class="logo">
+                        <img src="img/ThinkSummitLogoBlack.png" />
+                    </div>
+                    <div class="escape link" name="details">
+                        <img src="img/hamburgerWhite.png" />
+                    </div>
+                    <div class="row">
+                        <div class="yellowBar">
+                            <img src="img/DETAILSbutton.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="detailMother">
+                    <ul class="detailList">
+                        <li>SAM address </li>
+                        <li>WIFI password</li>
+                        <li>facebook</li>
+                        <li>twitter</li>
+                        <li>#417Thinksummit</li>
+                        <li>SAM address </li>
+                        <li>WIFI password</li>
+                        <li>facebook</li>
+                        <li>twitter</li>
+                        <li>#417Thinksummit</li>
+                    </ul>
                 </div>
             </div>
         </div>
+    </div>
 
+    <div class="agenda page" style="">
+        <div class="container">
+            <div class="row">
+                <div class="header">
+                    <img src="img/AGENDAphoto.png" />
+                    <div class="logo">
+                        <img src="img/ThinkSummitLogoBlack.png" />
+                    </div>
+                    <div class="escape link" name="agenda">
+                        <img src="img/hamburgerBlack.png" />
+                    </div>
+                    <div class="row">
+                        <div class="yellowBar">
+                            <img src="img/AGENDAbutton.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <script src="js/vendor/bootstrap.min.js"></script>
+            <div class="row">
+                <div class="agendaMother">
+                    <ul class="agendaList">
+                        <li>SAM address </li>
+                        <li>WIFI password</li>
+                        <li>facebook</li>
+                        <li>twitter</li>
+                        <li>#417Thinksummit</li>
+                        <li>SAM address </li>
+                        <li>WIFI password</li>
+                        <li>facebook</li>
+                        <li>twitter</li>
+                        <li>#417Thinksummit</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-        <script>
-            var screenWidth = jQuery(window).width();
-            var screenHeight = jQuery(window).height();
-            jQuery(".page").css({
-                'background-size': screenWidth + 'px' + screenHeight + 'px',
-                'width': screenWidth + 'px',
-                'height': screenHeight + 'px'
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
 
-            });
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        var screenWidth = jQuery(window).width();
+        var screenHeight = jQuery(window).height();
+        jQuery(".mother").css({
+            'background-size': screenWidth + 'px ' + screenHeight + 'px',
+            'width': screenWidth + 'px',
+            'height':screenHeight+'px'
 
-            jQuery('.link').on('touchestart, click', function() {
-                var page = jQuery(this).attr('name');
-                //console.log("."+page);
-                jQuery("." + page).toggle("slide", {
-                    easing: "swing",
-                    direction: "right"
+        });
 
-                }, 1000);
-            });
-            if (screenWidth >= 750) {
-                //window.location.replace("http://www.biz417.com/Think-Summit/index.php");
-            }
-            //this is a script I found on the internet to stop zooming
-            //Apple, in iOS10, has decided to ignore 'user-scalable=no'
-            document.documentElement.addEventListener('touchstart', function(event) {
-                if (event.touches.length > 1) {
-                    event.preventDefault();
-                }
-            }, false);
+        jQuery('.link').on('touchestart, click', function() {
+          jQuery('.mother').fadeToggle("slow");
+            var page = jQuery(this).attr('name');
+            //console.log("."+page);
+            jQuery("." + page).toggle("slide", {
+                easing: "swing",
+                direction: "right"
 
-            var lastTouchEnd = 0;
-            document.documentElement.addEventListener('touchend', function(event) {
-                var now = (new Date()).getTime();
-                if (now - lastTouchEnd <= 300) {
-                    event.preventDefault();
-                }
-                lastTouchEnd = now;
-            }, false);
-        </script>
+            }, 500);
+            //jQuery('.mother').toggle();
+        });
+        if (screenWidth >= 750) {
+            //window.location.replace("http://www.biz417.com/Think-Summit/index.php");
+        }
+        //this is a script I found on the internet to stop zooming
+        //Apple, in iOS10, has decided to ignore 'user-scalable=no'
+        // document.documentElement.addEventListener('touchstart', function(event) {
+        //     if (event.touches.length > 1) {
+        //         event.preventDefault();
+        //     }
+        // }, false);
+        //
+        // var lastTouchEnd = 0;
+        // document.documentElement.addEventListener('touchend', function(event) {
+        //     var now = (new Date()).getTime();
+        //     if (now - lastTouchEnd <= 300) {
+        //         event.preventDefault();
+        //     }
+        //     lastTouchEnd = now;
+        // }, false);
+    </script>
 
 </body>
 
