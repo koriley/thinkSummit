@@ -146,7 +146,7 @@ ul {
       position: fixed;
       top: 5px;
       right: 15px;
-      z-index: 50; }
+      z-index: 150; }
       .speakers .header .escape img {
         width: 55px; }
     .speakers .header .yellowBar {
@@ -177,7 +177,7 @@ ul {
           width: 150px !important;
           height: 150px !important;
           margin-top: 5px !important;
-          margin-bottom: 5px !important;
+          margin-bottom: 5px;
           margin-left: 5px !important; } }
       .speakers .speakerProfiles .speaker .img {
         width: inherit;
@@ -216,3 +216,53 @@ ul {
                 .speakers .speakerProfiles .speaker .img .speakerName .innerText .speakerDesc {
                   font-size: 10px;
                   line-height: 15px; } }
+
+.sponsoring {
+  height: 600px;
+  margin-top: 0;
+  position: relative;
+  top: 0;
+  display: none;
+  background-color: white;
+  overflow: scroll;
+  overflow-x: hidden;
+  padding-bottom: 15px; }
+  .sponsoring .header {
+    width: 375px;
+    position: relative; }
+    .sponsoring .header img {
+      width: 375px; }
+    .sponsoring .header .logo {
+      position: absolute;
+      top: 0;
+      left: 50px; }
+      .sponsoring .header .logo img {
+        width: 195px; }
+    .sponsoring .header .escape {
+      position: fixed;
+      top: 5px;
+      right: 15px;
+      z-index: 150; }
+      .sponsoring .header .escape img {
+        width: 55px; }
+    .sponsoring .header .yellowBar {
+      width: 100%;
+      height: 55px;
+      background: #EDE929;
+      text-align: center;
+      z-index: 100; }
+      .sponsoring .header .yellowBar img {
+        width: 170px; }
+  .sponsoring .presentedBy {
+    text-align: center;
+    margin-top: 25px; }
+    .sponsoring .presentedBy .presentedByText {
+      font-size: 2em;
+      letter-spacing: 2px;
+      margin-right: 5px; }
+  .sponsoring .sponsors .hostedText {
+    font-size: 1.5em; }
+  .sponsoring .sponsors .sponsorText {
+    font-size: 1em; }
+  .sponsoring .sponsors img {
+    margin: 25px; }

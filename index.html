@@ -46,7 +46,7 @@
                     <div class="link" name="agenda" style="width:100%"><img src="img/AGENDAbutton.png" /></div>
                     <div class="link" name="speakers" style="width:100%"><img src="img/SPEAKERSbutton.png" /></div>
                     <div style="width:100%"><img src="img/TICKETStext.png" /></div>
-                    <div style="width:100%"><img src="img/SPONSORSbutton.png" /></div>
+                    <div class="link" name="sponsoring" style="width:100%"><img src="img/SPONSORSbutton.png" /></div>
 
                 </div>
             </div>
@@ -461,6 +461,68 @@
         </div>
     </div>
 
+    <div class="sponsoring page" style="">
+        <div class="container">
+            <div class="row">
+                <div class="header">
+                    <img src="img/SPONSORSphoto2.png" />
+                    <div class="logo">
+                        <img src="img/ThinkSummitLogoBlack.png" />
+                    </div>
+                    <div class="escape link" name="sponsoring">
+                        <img src="img/hamburgerBlack.png" />
+                    </div>
+                    <div class="row">
+                        <div class="catch"></div>
+                        <div class="yellowBar">
+                            <img src="img/SPONSORSbutton.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="presentedBy" style="text-align: center;">
+                    <div class="presentedByText inline">PRESENTED BY</div>
+                    <div class="presentedByImg inline">
+                        <a href="https://www.peopleccg.com/" target="_blank"><img src="img/ThinkSummit16-microsite-PCCG.png" /></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="sponsors" style="text-align: center;">
+                    <div class="sponsorsHosted inline">
+                        <div class="hostedText inline">HOSTED BY</div>
+                        <div class="hostedImg inline">
+                            <a href="http://www.sgfmuseum.org/" target="_blank"><img src="img/ThinkSummit16-microsite-art-museum.png" /></a>
+                        </div>
+                    </div>
+                    <div class="sponsorsNormal inline">
+                        <div class="sponsorText inline">SPONSORED BY</div>
+                        <div class="sponsorImg inline">
+                            <a href="https://business.missouristate.edu/" target="_blank"><img src="img/ThinkSummit16-microsite-MSU.png" /></a>
+                        </div>
+                        <div class="sponsorImg inline">
+                            <a href="http://www.groomsinc.com/" target="_blank"><img src="img/ThinkSummit16-microsite-grooms.png" /></a>
+                        </div>
+                        <div class="sponsorImg inline">
+                            <a href="http://one.paperwise.com/" target="_blank"><img src="img/ThinkSummit16-microsite-paperwise.png" /></a>
+                        </div>
+                        <div class="sponsorImg inline">
+                            <a href="http://atlassecurity.com/" target="_blank"><img src="img/ThinkSummit16-microsite-atlas.png" /></a>
+                        </div>
+                        <div class="sponsorImg inline">
+                            <a href="http://www.esstrat.com/contact-us.html" target="_blank"><img src="img/ThinkSummit16-microsite-essential-strategies.png" /></a>
+                        </div>
+                        <div class="sponsorImg inline">
+                            <a href="https://workforce.otc.edu/" target="_blank"><img src="img/ThinkSummit16-microsite-workforce-OTC.png" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -487,6 +549,12 @@
 
         jQuery('.link').on('touchestart, click', function() {
             jQuery('.mother').fadeToggle("slow");
+            jQuery(".yellowBar").css({
+                'position': 'relative'
+            });
+            jQuery('.catch').css({
+                'height': '0px'
+            });
             page = jQuery(this).attr('name');
             //console.log("."+page);
             jQuery("." + page).toggle("slide", {
