@@ -69,7 +69,7 @@
                         <img src="img/ThinkSummitLogoBlack.png" />
                     </div>
                     <div class="escape link" name="details">
-                        <img src="img/hamburgerWhite.png" />
+                        <img class="homeButton" src="img/hamburgerWhite.png" />
                     </div>
                     <div class="row">
                         <div class="catch"></div>
@@ -108,7 +108,7 @@
                         <img src="img/ThinkSummitLogoBlack.png" />
                     </div>
                     <div class="escape link" name="agenda">
-                        <img src="img/hamburgerBlack.png" />
+                        <img class="homeButton" src="img/hamburgerBlack.png" />
                     </div>
                     <div class="row">
                         <div class="catch"></div>
@@ -147,7 +147,7 @@
                         <img src="img/ThinkSummitLogoWhite.png" />
                     </div>
                     <div class="escape link" name="speakers">
-                        <img src="img/hamburgerWhite.png" />
+                        <img class="homeButton" src="img/hamburgerWhite.png" />
                     </div>
                     <div class="row">
                         <div class="catch"></div>
@@ -470,7 +470,7 @@
                         <img src="img/ThinkSummitLogoBlack.png" />
                     </div>
                     <div class="escape link" name="sponsoring">
-                        <img src="img/hamburgerBlack.png" />
+                        <img class="homeButton" src="img/hamburgerBlack.png" />
                     </div>
                     <div class="row">
                         <div class="catch"></div>
@@ -530,82 +530,9 @@
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/vendor/addtohomescreen.min.js"></script>
     <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/main.min.js"></script>
     <script>
-        addToHomescreen.removeSession();
-        addToHomescreen({
-            maxDisplayCount: 0,
-            mandatory: false
-        });
-        var screenWidth = jQuery(window).width();
-        var screenHeight = jQuery(window).height();
-        var page;
-        jQuery(".mother").css({
-            'background-size': screenWidth + 'px ' + screenHeight + 'px',
-            'width': screenWidth + 'px',
-            'height': screenHeight + 'px'
 
-        });
-
-        jQuery('.link').on('touchestart, click', function() {
-            jQuery('.mother').fadeToggle("slow");
-            jQuery(".yellowBar").css({
-                'position': 'relative'
-            });
-            jQuery('.catch').css({
-                'height': '0px'
-            });
-            page = jQuery(this).attr('name');
-            //console.log("."+page);
-            jQuery("." + page).toggle("slide", {
-                easing: "swing",
-                direction: "right"
-
-            }, 500);
-
-            var ybaroffset = jQuery("." + page).find(".yellowBar").offset().top;
-            jQuery("." + page).scroll(function() {
-                ybaroffset = jQuery("." + page).find(".catch").offset().top;
-                console.log(ybaroffset);
-                if (ybaroffset <= 0) {
-                    jQuery(".yellowBar").css({
-                        'position': 'fixed',
-                        'top': '0',
-                        'left': '0',
-                        'right': '0'
-                    });
-                    jQuery('.catch').css({
-                        'height': '55px'
-                    });
-
-                } else if (ybaroffset >= 0) {
-                    jQuery(".yellowBar").css({
-                        'position': 'relative'
-                    });
-                    jQuery('.catch').css({
-                        'height': '0px'
-                    });
-
-                }
-            });
-
-            //jQuery('.mother').toggle();
-        });
-        //  alert(page);
-
-        jQuery(".page").on("swiperight", function() {
-            //alert("here!");
-            jQuery(this).find('.link').trigger("click");
-        });
-
-
-        jQuery('.speaker').on('touchstart', function() {
-            jQuery(this).find('.speakerName').toggle("slide", {
-                easing: "swing",
-                direction: "right"
-
-            });
-        });
 
         if (screenWidth >= 750) {
             //window.location.replace("http://www.biz417.com/Think-Summit/index.php");
