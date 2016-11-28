@@ -1,10 +1,65 @@
 @import url( 'https://fonts.googleapis.com/css?family=Oswald');
 $oswald: 'Oswald', sans-serif;
 $thinkYellow: #EDE929;
+$bgColor: white;
+//mixins for repeated styles
+@mixin parentStyle {
+    height: 600px;
+    margin-top: 0;
+    position: relative;
+    top: 0;
+    //background-attachment: fixed;
+    display: none;
+    background-color: $bgColor;
+    overflow: scroll;
+    overflow-x: hidden;
+    padding-bottom: 15px;
+}
+@mixin headerStyles($top, $left, $logoWidth) {
+    //this mixin is the top of each pages, the logo, the hamburger, the size of the background image.
+    width: 375px;
+    position: relative;
 
+    img {
+        width: 375px;
+    }
+
+    .logo {
+        position: absolute;
+        top: $top;
+        left: $left;
+
+        img {
+            width: $logoWidth;
+        }
+    }
+
+    .escape {
+        position: fixed;
+        top: 5px;
+        right: 15px;
+        z-index: 50;
+
+        img {
+            width: 55px;
+        }
+    }
+
+    .yellowBar {
+        width: 100%;
+        height: 55px;
+        background: $thinkYellow;
+        text-align: center;
+
+        img {
+            width: 170px;
+        }
+    }
+}
+//end mixins
 body {
     padding: 0;
-    background: white;
+    background: $bgColor;
 }
 
 ul {
@@ -50,7 +105,7 @@ ul {
 
     .footContent {
         font-family: $oswald;
-        color: white;
+        color: $bgColor;
         text-transform: uppercase;
         text-align: right;
         margin-top: 15px;
@@ -60,59 +115,10 @@ ul {
 }
 
 .details {
-    //background-size: 375px 100%;
-    //background-repeat: no-repeat;
-    //width: 400px;
-    height: 600px;
-    margin-top: 0;
-    position: relative;
-    top: 0;
-    //background-attachment: fixed;
-    display: none;
-    background-color: white;
-    overflow: scroll;
-    overflow-x: hidden;
-    padding-bottom: 15px;
+    @include parentStyle;
 
     .header {
-        width: 375px;
-        position: relative;
-
-        img {
-            width: 375px;
-        }
-
-        .logo {
-            position: absolute;
-            top: 75px;
-            left: 10px;
-
-            img {
-                width: 255px;
-            }
-        }
-
-        .escape {
-            position: fixed;
-            top: 5px;
-            right: 15px;
-            z-index: 50;
-
-            img {
-                width: 55px;
-            }
-        }
-
-        .yellowBar {
-            width: 100%;
-            height: 55px;
-            background: $thinkYellow;
-            text-align: center;
-
-            img {
-                width: 170px;
-            }
-        }
+        @include headerStyles(75px, 10px, 255px);
     }
 
     .detailMother {
@@ -131,59 +137,10 @@ ul {
 }
 
 .agenda {
-    //background-size: 375px 100%;
-    //background-repeat: no-repeat;
-    //width: 400px;
-    height: 600px;
-    margin-top: 0;
-    position: relative;
-    top: 0;
-    //background-attachment: fixed;
-    display: none;
-    background-color: white;
-    overflow: scroll;
-    overflow-x: hidden;
-    padding-bottom: 15px;
+    @include parentStyle;
 
     .header {
-        width: 375px;
-        position: relative;
-
-        img {
-            width: 375px;
-        }
-
-        .logo {
-            position: absolute;
-            top: 75px;
-            left: 10px;
-
-            img {
-                width: 255px;
-            }
-        }
-
-        .escape {
-            position: fixed;
-            top: 5px;
-            right: 15px;
-            z-index: 50;
-
-            img {
-                width: 55px;
-            }
-        }
-
-        .yellowBar {
-            width: 100%;
-            height: 55px;
-            background: $thinkYellow;
-            text-align: center;
-
-            img {
-                width: 170px;
-            }
-        }
+        @include headerStyles(10px, 10px, 255px);
     }
 
     .agendaMother {
@@ -202,60 +159,10 @@ ul {
 }
 
 .speakers {
-    //background-size: 375px 100%;
-    //background-repeat: no-repeat;
-    //width: 400px;
-    height: 600px;
-    margin-top: 0;
-    position: relative;
-    top: 0;
-    //background-attachment: fixed;
-    display: none;
-    background-color: white;
-    overflow: scroll;
-    overflow-x: hidden;
-    padding-bottom: 15px;
+    @include parentStyle;
 
     .header {
-        width: 375px;
-        position: relative;
-
-        img {
-            width: 375px;
-        }
-
-        .logo {
-            position: absolute;
-            top: 75px;
-            right: 10px;
-
-            img {
-                width: 195px;
-            }
-        }
-
-        .escape {
-            position: fixed;
-            top: 5px;
-            right: 15px;
-            z-index: 150;
-
-            img {
-                width: 55px;
-            }
-        }
-
-        .yellowBar {
-            width: 100%;
-            height: 55px;
-            background: $thinkYellow;
-            text-align: center;
-            z-index: 100;
-
-            img {
-                width: 170px;
-            }
-        }
+        @include headerStyles(75px, 175px, 195px);
     }
 
     .speakerProfiles {
@@ -341,60 +248,10 @@ ul {
 }
 
 .sponsoring {
-    //background-size: 375px 100%;
-    //background-repeat: no-repeat;
-    //width: 400px;
-    height: 600px;
-    margin-top: 0;
-    position: relative;
-    top: 0;
-    //background-attachment: fixed;
-    display: none;
-    background-color: white;
-    overflow: scroll;
-    overflow-x: hidden;
-    padding-bottom: 15px;
+    @include parentStyle;
 
     .header {
-        width: 375px;
-        position: relative;
-
-        img {
-            width: 375px;
-        }
-
-        .logo {
-            position: absolute;
-            top: 0;
-            left: 50px;
-
-            img {
-                width: 195px;
-            }
-        }
-
-        .escape {
-            position: fixed;
-            top: 5px;
-            right: 15px;
-            z-index: 150;
-
-            img {
-                width: 55px;
-            }
-        }
-
-        .yellowBar {
-            width: 100%;
-            height: 55px;
-            background: $thinkYellow;
-            text-align: center;
-            z-index: 100;
-
-            img {
-                width: 170px;
-            }
-        }
+        @include headerStyles(0px, 50px, 195px);
     }
 
     .presentedBy {
