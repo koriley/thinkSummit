@@ -85,7 +85,7 @@ jQuery(".page").on("swiperight", function() {
 });
 
 
-jQuery('.speaker').on('touchstart', 'click', function() {
+jQuery('.speaker').on('touchstart', function() {
     jQuery(this).find('.speakerName').toggle("slide", {
         easing: "swing",
         direction: "right"

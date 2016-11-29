@@ -12,7 +12,7 @@ $bgColor: white;
     display: none;
     background-color: $bgColor;
     overflow: scroll;
-    overflow-x: hidden;
+   overflow-x: hidden;
     padding-bottom: 15px;
 }
 @mixin headerStyles($top, $left, $logoWidth) {
@@ -38,7 +38,7 @@ $bgColor: white;
         position: fixed;
         top: 5px;
         right: 15px;
-        z-index: 50;
+        z-index: 51;
 
         img {
             width: 55px;
@@ -50,7 +50,7 @@ $bgColor: white;
         height: 60px;
         background: $thinkYellow;
         text-align: center;
-        z-index:2000;
+        z-index:50;
 
         img {
             width: 170px;
@@ -220,7 +220,7 @@ ul {
                         .theSpeakerName {
                             // margin-top:10px;
                             padding-top: 10px;
-                            font-size: 24px;
+                            font-size: 20px;
                             line-height: 25px;
                         }
 
