@@ -50,6 +50,7 @@ $bgColor: white;
         height: 60px;
         background: $thinkYellow;
         text-align: center;
+        z-index:2000;
 
         img {
             width: 170px;
@@ -182,7 +183,7 @@ ul {
             margin-bottom: 20px;
             margin-left: 10px;
             height: 200px;
-            background: #f8d2a6;
+            //background: #f8d2a6;
             width: 200px;
             @media screen and (max-width:500px) {
                 width: 150px !important;
@@ -195,7 +196,7 @@ ul {
             .img {
                 width: inherit;
                 height: inherit;
-                background: #f8d2a6;
+              //  background: #f8d2a6;
                 position: relative;
 
                 img {
