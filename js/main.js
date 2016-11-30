@@ -28,18 +28,9 @@ jQuery('.link').on('touchestart, click', function() {
         easing: "swing",
         direction: "right"
 
-    }, 500);
-    //console.log(screenHeight);
-    //console.log(page);
-
-    // jQuery("." + page).css({
-    //     'height': screenHeight + 'px !important'
-    // });
-    //
-    // var localHeight = jQuery('.'+page).height();
-    // //console.log('localHeight: '+localHeight);
-    // //console.log(page+' height:'+ screenHeight + "px");
-
+    }, 500, function() {
+        jQuery('.escape').toggle();
+    });
 
     jQuery(".yellowBar").css({
         'position': 'relative'
