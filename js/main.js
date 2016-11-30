@@ -28,9 +28,7 @@ jQuery('.link').on('touchestart, click', function() {
         easing: "swing",
         direction: "right"
 
-    }, 500, function() {
-        jQuery('.escape').toggle();
-    });
+    },500);
 
     jQuery(".yellowBar").css({
         'position': 'relative'
