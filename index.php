@@ -1,3 +1,11 @@
+<?php
+    header("Cache-Control: max-age=0, no-cache, no-store, must-revalidate");
+    header("Pragma: no-cache");
+    header("Expires: Thu, 01 Jan 1970 00:00:01 GMT");
+    //header('Content-type: text/cache-manifest');
+?>
+
+
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -39,13 +47,14 @@
     <link rel="stylesheet" href="css/addtohomescreen.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css?v=1">
 
 
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
 
 <body>
+  <div class="blackOut" style="">This app is made for portrait mode.</div>
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -546,13 +555,32 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    
+
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/vendor/addtohomescreen.min.js"></script>
     <script src="js/plugins.js"></script>
-    <script src="js/main.min.js"></script>
+    <script src="js/main.min.js?v=1"></script>
     <script>
+    function doOnOrientationChange()
+     {
+       switch(window.orientation)
+       {
+         case -90:
+         case 90:
+           //alert('tlandscape');
+           jQuery('.blackOut').show();
+           break;
+         default:
+           //alert('tportrait');
+           jQuery('.blackOut').hide();
+           break;
+       }
+     }
 
+     window.addEventListener('orientationchange', doOnOrientationChange);
+
+     // Initial execution if needed
+     doOnOrientationChange();
         if (screenWidth >= 750) {
             //window.location.replace("http://www.biz417.com/Think-Summit/index.php");
         }

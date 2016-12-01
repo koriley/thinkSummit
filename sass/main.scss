@@ -40,7 +40,6 @@ $bgColor: white; //mixins for repeated styles
         right: 15px;
         z-index: 51;
         //display: none;
-
         img {
             width: 55px;
         }
@@ -67,6 +66,24 @@ body {
 
 ul {
     list-style-image: url('../img/arrow.png');
+}
+
+.blackOut {
+    color: white;
+    font-size: 2em;
+    text-align: center;
+    line-height: 90px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 20000;
+    background: black;
+    display: none;
+    font-family: $oswald;
+
+
 }
 
 .mother {
