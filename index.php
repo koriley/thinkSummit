@@ -47,6 +47,7 @@ header("Expires: Thu, 01 Jan 1970 00:00:01 GMT");
         <link rel="stylesheet" href="css/addtohomescreen.css">
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+        <link rel="node_modules/fixed-sticky/fixedsticky.css">
         <link rel="stylesheet" href="css/main.css?v=<?PHP echo(rand(1,1000));?>">
 
 
@@ -597,6 +598,7 @@ header("Expires: Thu, 01 Jan 1970 00:00:01 GMT");
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/vendor/addtohomescreen.min.js"></script>
         <script src="js/plugins.js"></script>
+        <script src="node_modules/fixed-sticky/fixedsticky.js"></script>
         <script src="js/main.min.js??v=<?PHP echo(rand(1,1000));?>"></script>
         <script>
 

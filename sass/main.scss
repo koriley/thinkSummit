@@ -54,6 +54,7 @@ $smallScreen: 500px;
         background: $thinkYellow;
         text-align: center;
         z-index: 69;
+        
 
         img {
             width: 170px;
@@ -70,6 +71,8 @@ body {
 ul {
     list-style-image: url('../img/arrow.png');
 }
+
+
 
 .yellowStick{
   position:fixed;
