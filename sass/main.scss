@@ -2,18 +2,21 @@
 $oswald: 'Oswald', sans-serif;
 $thinkYellow: #EDE929;
 $bgColor: white; //mixins for repeated styles
+$smallScreen: 500px;
 @mixin parentStyle {
-    height: 600px;
+    //height: 600px;
     margin-top: 0;
     position: relative;
     top: 0;
     //background-attachment: fixed;
     display: none;
     background-color: $bgColor;
-    overflow: scroll;
+    overflow-y: scroll;
     overflow-x: hidden;
     padding-bottom: 15px;
-    –webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch;
+    z-index:60;
+    //border:1px solid red;
 }
 @mixin headerStyles($top, $left, $logoWidth) {
     //this mixin is the top of each pages, the logo, the hamburger, the size of the background image.
@@ -35,10 +38,10 @@ $bgColor: white; //mixins for repeated styles
     }
 
     .escape {
-        position: fixed;
+        position:absolute;
         top: 5px;
         right: 15px;
-        z-index: 51;
+        z-index: 75;
         //display: none;
         img {
             width: 55px;
@@ -50,7 +53,7 @@ $bgColor: white; //mixins for repeated styles
         height: 60px;
         background: $thinkYellow;
         text-align: center;
-        z-index: 50;
+        z-index: 69;
 
         img {
             width: 170px;
@@ -68,6 +71,51 @@ ul {
     list-style-image: url('../img/arrow.png');
 }
 
+.yellowStick{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  float:left;
+  z-index:69;
+  display:block;
+  width: 100%;
+  height: 60px;
+  background: $thinkYellow;
+  text-align: center;
+  z-index: 69;
+  img {
+      width: 170px;
+  }
+  .escape2 {
+      position:absolute;
+      top: 5px;
+      right: 15px;
+      z-index: 75;
+      //display: none;
+      img {
+          width: 55px;
+      }
+  }
+
+}
+
+.yellowUnStick{
+  position:relative;
+  display: none;
+  width: 100%;
+  height: 60px;
+  background: $thinkYellow;
+  text-align: center;
+  z-index: -10;
+  img {
+      width: 170px;
+  }
+
+}
+
+
+
 .blackOut {
     color: white;
     font-size: 2em;
@@ -82,8 +130,6 @@ ul {
     background: black;
     display: none;
     font-family: $oswald;
-
-
 }
 
 .mother {
@@ -159,6 +205,22 @@ ul {
     }
 }
 
+.tickets {
+    @include parentStyle;
+
+    .header {
+        @include headerStyles(75px, 10px, 255px);
+    }
+
+    .ticketMother {
+        //  text-align:center;
+        //margin-top: 275px;
+        margin-left: 10px;
+
+
+    }
+}
+
 .agenda {
     @include parentStyle;
 
@@ -167,17 +229,49 @@ ul {
     }
 
     .agendaMother {
-        //  text-align:center;
-        //margin-top: 275px;
-        margin-left: 10px;
-
-        .agendaList {
-            li {
-                text-transform: uppercase;
-                font-size: 2em;
-                padding: 10px;
-            }
+        width: 100%;
+-webkit-transform: translate3d(0, 0, 0);
+        .inner {
+          height: calc(100% + 1px);
         }
+
+
+            .agendaEvent {
+                div {
+                    margin-right: 5px;
+
+                }
+                 vertical-align: middle;
+                 padding-top: 15px;
+                color: black;
+                font-family: $oswald;
+
+                .agendaMarker {
+                    width: 28px;
+                    height: 30px;
+                    background: url('../img/arrow.png') no-repeat;
+                    float:left;
+                }
+
+                .time {
+                    vertical-align: top;
+                }
+
+                .agendaDesc {
+                    vertical-align: top;
+                    border-bottom: 1px solid $thinkYellow;
+                    width: 100%;
+                     margin-bottom:5px;
+                     padding-bottom:15px;
+
+
+                    .eventTitle {
+                         word-wrap: break-word;
+                        font-weight: bold;
+                    }
+                }
+            }
+
     }
 }
 
