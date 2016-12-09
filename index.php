@@ -43,11 +43,10 @@ header("Expires: Thu, 01 Jan 1970 00:00:01 GMT");
 
 
 
+        <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/addtohomescreen.css">
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-        <link rel="node_modules/fixed-sticky/fixedsticky.css">
         <link rel="stylesheet" href="css/main.css?v=<?PHP echo(rand(1,1000));?>">
 
 
@@ -55,7 +54,7 @@ header("Expires: Thu, 01 Jan 1970 00:00:01 GMT");
     </head>
 
     <body>
-        <!-- <div class="blackOut" style="">This app is made for portrait mode.</div> -->
+        <div class="blackOut" style="">This app is made for portrait mode.</div>
         <div class="yellowUnStick realYellowBar"></div>
         <!--[if lt IE 8]>
                 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -74,7 +73,7 @@ header("Expires: Thu, 01 Jan 1970 00:00:01 GMT");
                         <div class="link" name="details" style="width:100%"><img src="img/DETAILSbutton.png" /></div>
                         <div class="link" name="agenda" style="width:100%"><img src="img/AGENDAbutton.png" /></div>
                         <div class="link" name="speakers" style="width:100%"><img src="img/SPEAKERSbutton.png" /></div>
-                        <div class="link" name="tickets" style="width:100%"><img src="img/TICKETStext.png" /></div>
+                        <div class="ticketModel" style="width:100%" ><img src="img/TICKETStext.png" /></div>
                         <div class="link" name="sponsoring" style="width:100%"><img src="img/SPONSORSbutton.png" /></div>
                     </div>
                 </div>
@@ -88,7 +87,7 @@ header("Expires: Thu, 01 Jan 1970 00:00:01 GMT");
                 </div>
             </div>
         </div>
-        <div class="details page" style="">
+        <div class="details page"  data-next="agenda" style="">
             <div class="container">
                 <div class="row">
                     <div class="header">
@@ -96,7 +95,7 @@ header("Expires: Thu, 01 Jan 1970 00:00:01 GMT");
                         <div class="logo">
                             <img src="img/ThinkSummitLogoBlack.png" />
                         </div>
-                        <div class="escape link" name="details">
+                        <div class="escape" name="details">
                             <img class="homeButton" src="img/hamburgerWhite.png" />
                         </div>
                         <div class="row">
@@ -126,7 +125,7 @@ header("Expires: Thu, 01 Jan 1970 00:00:01 GMT");
                 </div>
             </div>
         </div>
-        <div class="agenda page" style="">
+        <div class="agenda page" data-next="speakers" style="">
             <div class="container">
                 <div class="row">
                     <div class="header">
@@ -134,7 +133,7 @@ header("Expires: Thu, 01 Jan 1970 00:00:01 GMT");
                         <div class="logo">
                             <img src="img/ThinkSummitLogoBlack.png" />
                         </div>
-                        <div class="escape link" name="agenda">
+                        <div class="escape" name="agenda">
                             <img class="homeButton" src="img/hamburgerBlack.png" />
                         </div>
                         <div class="row">
@@ -147,7 +146,7 @@ header("Expires: Thu, 01 Jan 1970 00:00:01 GMT");
                 </div>
                 <div class="row">
                     <div class="agendaMother">
-                      <div class="inner"></div>
+                        <div class="inner"></div>
                         <div class="agendaEvent">
                             <div class="agendaMarker inline">&nbsp;</div>
                             <div class="time inline">7:30 A.M. POWER BREAKFAST</div>
@@ -171,46 +170,46 @@ header("Expires: Thu, 01 Jan 1970 00:00:01 GMT");
                         </div>
 
 
-                                                <div class="agendaEvent">
-                                                    <div class="agendaMarker inline">&nbsp;</div>
-                                                    <div class="time inline">ALL DAY: CONVERSATION HALL</div>
-                                                    <div class="agendaDesc inline">
-                                                        <div class="eventTitle">Brought to you by OTC Workforce Development and Essential Strategies, this area is the hot spot to meet and greet with our speakers. This is what today&rsquo;s all about: starting a conversation about how we can take what we learn today and move our region forward.</div>
-                                                    </div>
-                                                </div>
-                                                <div class="agendaEvent">
-                                                    <div class="agendaMarker inline">&nbsp;</div>
-                                                    <div class="time inline">ALL DAY: INTERACTIVE LOUNGE</div>
-                                                    <div class="agendaDesc inline">
-                                                        <div class="eventTitle">We know you&rsquo;re busy. Take your time to reply to emails or catch a conference call without missing out on what&rsquo;s happening in the People Centric Think Tank. We&rsquo;re simulcasting the event here in partnership with MSU College of Business.</div>
-                                                    </div>
-                                                </div>
-                                                <div class="agendaEvent">
-                                                    <div class="agendaMarker inline">&nbsp;</div>
-                                                    <div class="time inline">ALL DAY: RECHARGING STATION</div>
-                                                    <div class="agendaDesc inline">
-                                                        <div class="eventTitle">Need more power? Recharge your phone, tablet and mind at PaperWise&rsquo;s Recharging Station. The experts here can help make recommendations for recharging your business&rsquo;s process and workflow. Plug in here.</div>
-                                                    </div>
-                                                </div>
-                                                <div class="agendaEvent">
-                                                    <div class="agendaMarker inline">&nbsp;</div>
-                                                    <div class="time inline">ALL DAY: #417THINKSUMMIT SOCIAL WALL</div>
-                                                    <div class="agendaDesc inline">
-                                                        <div class="eventTitle">Engage with the conversation, and see your tweets on the big screen at the #417ThinkSummit Social Wall. We&rsquo;re live tweeting the event and sharing photos all day long. So set your social to public and include the hashtag to be part of it!</div>
-                                                    </div>
-                                                </div>
-                                                <div class="agendaEvent">
-                                                    <div class="agendaMarker inline">&nbsp;</div>
-                                                    <div class="time inline">4:30 P.M. DRINK SUMMIT HAPPY HOUR</div>
-                                                    <div class="agendaDesc inline">
-                                                        <div class="eventTitle">Mingle with the city&#39;s biggest minds and grow an action plan with others from the ideas discussed during the day. Over drinks and delicious&nbsp;appetizers from Simply Delicious, of course.</div>
-                                                    </div>
-                                                </div>
+                        <div class="agendaEvent">
+                            <div class="agendaMarker inline">&nbsp;</div>
+                            <div class="time inline">ALL DAY: CONVERSATION HALL</div>
+                            <div class="agendaDesc inline">
+                                <div class="eventTitle">Brought to you by OTC Workforce Development and Essential Strategies, this area is the hot spot to meet and greet with our speakers. This is what today&rsquo;s all about: starting a conversation about how we can take what we learn today and move our region forward.</div>
+                            </div>
+                        </div>
+                        <div class="agendaEvent">
+                            <div class="agendaMarker inline">&nbsp;</div>
+                            <div class="time inline">ALL DAY: INTERACTIVE LOUNGE</div>
+                            <div class="agendaDesc inline">
+                                <div class="eventTitle">We know you&rsquo;re busy. Take your time to reply to emails or catch a conference call without missing out on what&rsquo;s happening in the People Centric Think Tank. We&rsquo;re simulcasting the event here in partnership with MSU College of Business.</div>
+                            </div>
+                        </div>
+                        <div class="agendaEvent">
+                            <div class="agendaMarker inline">&nbsp;</div>
+                            <div class="time inline">ALL DAY: RECHARGING STATION</div>
+                            <div class="agendaDesc inline">
+                                <div class="eventTitle">Need more power? Recharge your phone, tablet and mind at PaperWise&rsquo;s Recharging Station. The experts here can help make recommendations for recharging your business&rsquo;s process and workflow. Plug in here.</div>
+                            </div>
+                        </div>
+                        <div class="agendaEvent">
+                            <div class="agendaMarker inline">&nbsp;</div>
+                            <div class="time inline">ALL DAY: #417THINKSUMMIT SOCIAL WALL</div>
+                            <div class="agendaDesc inline">
+                                <div class="eventTitle">Engage with the conversation, and see your tweets on the big screen at the #417ThinkSummit Social Wall. We&rsquo;re live tweeting the event and sharing photos all day long. So set your social to public and include the hashtag to be part of it!</div>
+                            </div>
+                        </div>
+                        <div class="agendaEvent">
+                            <div class="agendaMarker inline">&nbsp;</div>
+                            <div class="time inline">4:30 P.M. DRINK SUMMIT HAPPY HOUR</div>
+                            <div class="agendaDesc inline">
+                                <div class="eventTitle">Mingle with the city&#39;s biggest minds and grow an action plan with others from the ideas discussed during the day. Over drinks and delicious&nbsp;appetizers from Simply Delicious, of course.</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="speakers page" style="">
+        <div class="speakers page" data-next="sponsoring" style="">
             <div class="container">
                 <div class="row">
                     <div class="header">
@@ -218,7 +217,7 @@ header("Expires: Thu, 01 Jan 1970 00:00:01 GMT");
                         <div class="logo">
                             <img src="img/ThinkSummitLogoWhite.png" />
                         </div>
-                        <div class="escape link" name="speakers">
+                        <div class="escape" name="speakers">
                             <img class="homeButton" src="img/hamburgerWhite.png" />
                         </div>
                         <div class="row">
@@ -500,34 +499,8 @@ header("Expires: Thu, 01 Jan 1970 00:00:01 GMT");
                 </div>
             </div>
         </div>
-        <div class="tickets page">
-            <div class="container">
-                <div class="row">
-                    <div class="header">
-                        <img src="img/SPONSORSphoto2.png" />
-                        <div class="logo">
-                            <img src="img/ThinkSummitLogoBlack.png" />
-                        </div>
-                        <div class="escape link" name="tickets">
-                            <img class="homeButton" src="img/hamburgerBlack.png" />
-                        </div>
-                        <div class="row">
 
-                            <div class="catch"></div>
-                            <div class="yellowBar">
-                                <img src="img/TICKETStext.png" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <!-- <iframe  class="ticketIframe" style="width:100%;" src="https://417tix.com/events/biz-417-s-think-summit-presented-by-people-centric-consulting-group"></iframe> -->
-                </div>
-            </div>
-        </div>
-        <div class="sponsoring page" style="">
+        <div class="sponsoring page" data-next="details" style="">
             <div class="container">
                 <div class="row">
                     <div class="header">
@@ -535,7 +508,7 @@ header("Expires: Thu, 01 Jan 1970 00:00:01 GMT");
                         <div class="logo">
                             <img src="img/ThinkSummitLogoBlack.png" />
                         </div>
-                        <div class="escape link" name="sponsoring">
+                        <div class="escape" name="sponsoring">
                             <img class="homeButton" src="img/hamburgerBlack.png" />
                         </div>
                         <div class="row">
@@ -589,8 +562,24 @@ header("Expires: Thu, 01 Jan 1970 00:00:01 GMT");
             </div>
         </div>
 
+        <div class="modal fade tix" tabindex="-1" role="dialog" id="ticketModel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
 
+                    <div class="modal-body">
+                        This will open a new browser window to 417tix.com where you can purchas tickets to this event and many others in 417-land.
+                        The Think Summit app will still be running in the background so you can quickly get back.<br/><br/>
 
+                        If you don't wish to leave the app, click close and no one will ever know; or will we? muhahahaha
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="closeButton" data-dismiss="modal">Close</button>
+                        <button type="button" class="priButton">Take me to 417tix.com</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <div class="openBrowser"><a class="tixLink" id="tixLink" href="https://417tix.com/events/biz-417-s-think-summit-presented-by-people-centric-consulting-group" target="_blank"></a></div>
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
@@ -598,30 +587,15 @@ header("Expires: Thu, 01 Jan 1970 00:00:01 GMT");
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/vendor/addtohomescreen.min.js"></script>
         <script src="js/plugins.js"></script>
-        <script src="node_modules/fixed-sticky/fixedsticky.js"></script>
         <script src="js/main.min.js??v=<?PHP echo(rand(1,1000));?>"></script>
         <script>
 
-            function doOnOrientationChange()
-            {
-                switch (window.orientation)
-                {
-                    case -90:
-                    case 90:
-                        //alert('tlandscape');
-                        jQuery('.blackOut').show();
-                        break;
-                    default:
-                        //alert('tportrait');
-                        jQuery('.blackOut').hide();
-                        break;
-                }
-            }
 
-            window.addEventListener('orientationchange', doOnOrientationChange);
 
+
+            
             // Initial execution if needed
-            doOnOrientationChange();
+
             if (screenWidth >= 750) {
                 //window.location.replace("http://www.biz417.com/Think-Summit/index.php");
             }

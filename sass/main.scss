@@ -6,7 +6,7 @@ $smallScreen: 500px;
 @mixin parentStyle {
     //height: 600px;
     margin-top: 0;
-    position: relative;
+    position: fixed;
     top: 0;
     //background-attachment: fixed;
     display: none;
@@ -54,7 +54,7 @@ $smallScreen: 500px;
         background: $thinkYellow;
         text-align: center;
         z-index: 69;
-        
+
 
         img {
             width: 170px;
@@ -72,7 +72,22 @@ ul {
     list-style-image: url('../img/arrow.png');
 }
 
+.tix{
+  font-family: $oswald;
+  color:#333;
+  button{
+    font-family:$oswald;
 
+  }
+  .priButton{
+    background:#286090;
+    text-shadow: none;
+    &:hover{
+      background:#286090;
+      text-shadow: none;
+    }
+  }
+}
 
 .yellowStick{
   position:fixed;
