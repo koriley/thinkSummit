@@ -3,6 +3,7 @@
 function gotoPage(nextPage, currentPage) {
     jQuery(".realYellowBar").removeClass('yellowStick').addClass('yellowUnStick');
     jQuery('.' + nextPage).scrollTop(0);
+  //  jQuery('.'+nextPage).css({'position':'initial'});
     var screenWidth = jQuery(window).width();
     var screenHeight = jQuery(window).height();
     if (currentPage === nextPage) {
@@ -14,11 +15,13 @@ function gotoPage(nextPage, currentPage) {
     //     direction: "left"
     //
     // }, 500);
+   jQuery('.'+nextPage).css({'right':'0px'});
       jQuery('.'+nextPage).toggle("slide",{
           easing: "linear",
           direction: "right"
 
       }, 500);
+
 
 
 
@@ -34,7 +37,7 @@ function gotoPage(nextPage, currentPage) {
     jQuery("." + currentPage).animate({
         right: screenWidth
     }, "slow", function() {
-        console.log("ran current page");
+        //console.log("ran current page");
         jQuery(this).hide();
     });
 
@@ -76,7 +79,9 @@ function gotoPage(nextPage, currentPage) {
 function escapeHome(page) {
     //this method activates when the user wants to go home.
     jQuery('.' + page).scrollTop(0);
+    jQuery('.mother').css({'right':'0px'});
     jQuery('.mother').fadeToggle("slow");
+    //jQuery('.mother').css({'position':'inherit'});
     //console.log("."+page);
     jQuery("." + page).toggle("slide", {
         easing: "swing",
@@ -105,10 +110,12 @@ function doOnOrientationChange() {
 window.addEventListener('orientationchange', doOnOrientationChange);
 doOnOrientationChange();
 
+
 addToHomescreen.removeSession();
 addToHomescreen({
     maxDisplayCount: 0,
-    mandatory: false
+    mandatory: false,
+    lifespan:0
 });
 
 var screenWidth = jQuery(window).width();
