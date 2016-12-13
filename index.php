@@ -23,7 +23,7 @@ header("Expires: Thu, 01 Jan 1970 00:00:01 GMT");
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
 
-      
+
         <link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png">
         <link rel="icon" type="image/png" sizes="192x192" href="img/android-icon-192x192.png">
         <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
@@ -86,7 +86,7 @@ header("Expires: Thu, 01 Jan 1970 00:00:01 GMT");
                     <div class="header">
                         <img src="img/DETAILsphoto.png" />
                         <div class="logo">
-                            <img src="img/ThinkSummitLogoBlack.png" />
+                            <img src="img/ThinkSummitLogoWhite.png" />
                         </div>
                         <div class="escape" name="details">
                             <img class="homeButton" src="img/hamburgerWhite.png" />
@@ -149,7 +149,7 @@ header("Expires: Thu, 01 Jan 1970 00:00:01 GMT");
                         </div>
                         <div class="agendaEvent">
                             <div class="agendaMarker inline">&nbsp;</div>
-                            <div class="time inline">8 A.M.-4:30 P.M. PEOPLE CENTRIC'S THINK TANK</div>
+                            <div class="time inline">8 A.M.&ndash;4:30 P.M. PEOPLE CENTRIC&#39;S THINK TANK</div>
                             <div class="agendaDesc inline">
                                 <div class="eventTitle">We pack 15 talks from 417-land's biggest thinkers into one dynamic day. Grooms Office Environments sets the stage with innovative spaces.</div>
                             </div>
@@ -499,7 +499,7 @@ header("Expires: Thu, 01 Jan 1970 00:00:01 GMT");
                     <div class="header">
                         <img src="img/SPONSORSphoto2.png" />
                         <div class="logo">
-                            <img src="img/ThinkSummitLogoBlack.png" />
+                            <img src="img/ThinkSummitLogoWhite.png" />
                         </div>
                         <div class="escape" name="sponsoring">
                             <img class="homeButton" src="img/hamburgerBlack.png" />
@@ -513,7 +513,9 @@ header("Expires: Thu, 01 Jan 1970 00:00:01 GMT");
                         </div>
                     </div>
                 </div>
+                <div class="sponsorMother">
                 <div class="row">
+                  <div class="inner"></div>
                     <div class="presentedBy" style="text-align: center;">
                         <div class="presentedByText inline">PRESENTED BY</div>
                         <div class="presentedByImg inline">
@@ -522,15 +524,11 @@ header("Expires: Thu, 01 Jan 1970 00:00:01 GMT");
                     </div>
                 </div>
                 <div class="row">
-                    <div class="sponsors" style="text-align: center;">
-                        <div class="sponsorsHosted inline">
-                            <div class="hostedText inline">HOSTED BY</div>
-                            <div class="hostedImg inline">
-                                <a href="http://www.sgfmuseum.org/" target="_blank"><img src="img/ThinkSummit16-microsite-art-museum.png" /></a>
-                            </div>
-                        </div>
+                  <div class="sponsors" style="text-align: center;">
+
                         <div class="sponsorsNormal inline">
                             <div class="sponsorText inline">SPONSORED BY</div>
+                            <div class="sponsorFlex">
                             <div class="sponsorImg inline">
                                 <a href="https://business.missouristate.edu/" target="_blank"><img src="img/ThinkSummit16-microsite-MSU.png" /></a>
                             </div>
@@ -550,24 +548,44 @@ header("Expires: Thu, 01 Jan 1970 00:00:01 GMT");
                                 <a href="https://workforce.otc.edu/" target="_blank"><img src="img/ThinkSummit16-microsite-workforce-OTC.png" /></a>
                             </div>
                         </div>
+                      </div>
+
+                            <div class="sponsorsHosted inline">
+                                <div class="hostedText inline">HOSTED BY</div>
+                                <div class="sponsorFlex">
+                                <div class="hostedImg inline">
+                                    <a href="http://www.sgfmuseum.org/" target="_blank"><img src="img/ThinkSummit16-microsite-art-museum.png" /></a>
+                                </div>
+                            </div>
+                          </div>
+                            <div class="sponsorsHosted inline">
+                                <div class="hostedText inline">In Partnership</div>
+                                <div class="sponsorFlex">
+                                <div class="hostedImg inline">
+                                    <a href="http://simplydeliciousllc.com/" target="_blank"><img src="img/ThinkSummit16-microsite-simplydeliciousWEB.png" /></a>
+                                </div>
+                                <div class="hostedImg inline">
+                                    <a href="http://www.mothersbrewing.com/" target="_blank"><img src="img/ThinkSummit16-microsite-mothersWEB.png" /></a>
+                                </div>
+                            </div>
+                          </div>
                     </div>
                 </div>
             </div>
         </div>
+      </div>
 
         <div class="modal fade tix" tabindex="-1" role="dialog" id="ticketModel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
 
                     <div class="modal-body">
-                        This will open a new browser window to 417tix.com where you can purchas tickets to this event and many others in 417-land.
-                        The Think Summit app will still be running in the background so you can quickly get back.<br/><br/>
-
-                        If you don't wish to leave the app, click close and no one will ever know; or will we? muhahahaha
+                        This will open a new browser window to 417tix.com where you can purchase Think Summit tickets. This app will be running in the background
+                        so you can get back quickly.
                     </div>
                     <div class="modal-footer">
+                      <button type="button" class="priButton">Take me to 417tix.com</button>
                         <button type="button" class="closeButton" data-dismiss="modal">Close</button>
-                        <button type="button" class="priButton">Take me to 417tix.com</button>
                     </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->

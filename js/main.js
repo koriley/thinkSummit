@@ -3,24 +3,26 @@
 function gotoPage(nextPage, currentPage) {
     jQuery(".realYellowBar").removeClass('yellowStick').addClass('yellowUnStick');
     jQuery('.' + nextPage).scrollTop(0);
-  //  jQuery('.'+nextPage).css({'position':'initial'});
+    //  jQuery('.'+nextPage).css({'position':'initial'});
     var screenWidth = jQuery(window).width();
     var screenHeight = jQuery(window).height();
     if (currentPage === nextPage) {
         nextPage = 'mother';
     }
-    //console.log("."+nextPage);
+    ////console.log("."+nextPage);
     // jQuery("." + currentPage).toggle("slide", {
     //     easing: "linear",
     //     direction: "left"
     //
     // }, 500);
-   jQuery('.'+nextPage).css({'right':'0px'});
-      jQuery('.'+nextPage).toggle("slide",{
-          easing: "linear",
-          direction: "right"
+    jQuery('.' + nextPage).css({
+        'right': '0px'
+    });
+    jQuery('.' + nextPage).toggle("slide", {
+        easing: "linear",
+        direction: "right"
 
-      }, 500);
+    }, 500);
 
 
 
@@ -29,7 +31,7 @@ function gotoPage(nextPage, currentPage) {
     //     jQuery().animate({
     //         left: 0
     //     }, "slow");
-    //     console.log("ran next page");
+    //     //console.log("ran next page");
     // });
 
 
@@ -37,7 +39,7 @@ function gotoPage(nextPage, currentPage) {
     jQuery("." + currentPage).animate({
         right: screenWidth
     }, "slow", function() {
-        //console.log("ran current page");
+        ////console.log("ran current page");
         jQuery(this).hide();
     });
 
@@ -79,16 +81,25 @@ function gotoPage(nextPage, currentPage) {
 function escapeHome(page) {
     //this method activates when the user wants to go home.
     jQuery('.' + page).scrollTop(0);
-    jQuery('.mother').css({'right':'0px'});
-    jQuery('.mother').fadeToggle("slow");
+    jQuery('.mother').css({
+        'left': '0px'
+    });
+
+    jQuery('.mother').toggle("slide", {
+        easing: "linear",
+        direction: "left"
+
+    }, 500);
     //jQuery('.mother').css({'position':'inherit'});
-    //console.log("."+page);
+    //console.log(num);
     jQuery("." + page).toggle("slide", {
-        easing: "swing",
+        easing: "linear",
         direction: "right"
 
     }, 500);
-    jQuery(".realYellowBar").removeClass('yellowStick').addClass('yellowUnStick');
+    if (jQuery(".realYellowBar").hasClass('yellowStick')) {
+        jQuery(".realYellowBar").removeClass('yellowStick').addClass('yellowUnStick');
+    }
 }
 
 function doOnOrientationChange() {
@@ -114,97 +125,133 @@ doOnOrientationChange();
 addToHomescreen.removeSession();
 addToHomescreen({
     maxDisplayCount: 0,
-    mandatory: false,
-    lifespan:0
+    mandatory: false
 });
 
 var screenWidth = jQuery(window).width();
 var screenHeight = jQuery(window).height();
 
-jQuery(document).ready(function() {
-    var yellowImage;
-    var escapeMe;
 
-    //console.log(screenHeight);
+var yellowImage;
+var escapeMe;
+var i = 0;
+var k = 0;
+var yellowPage = undefined;
+var t = 0;
+var linkPage = undefined;
 
-    //set all the pages to the screen height.
-    var page;
-    jQuery(".page").each(function() {
-        jQuery(this).css({
-            'height': screenHeight + 'px'
-        });
-    });
+////console.log(screenHeight);
 
-    //build the mother page(home page) so it sets asize presidence.
-    jQuery(".mother").css({
-        'background-size': screenWidth + 'px ' + screenHeight + 'px',
-        'width': screenWidth + 'px',
+//set all the pages to the screen height.
+var page;
+jQuery(".page").each(function() {
+    jQuery(this).css({
         'height': screenHeight + 'px'
-
     });
+});
 
-    //change how the home button looks, because I was too lazy to do a find and replace and it seemed to be changing a lot.
-    jQuery('.homeButton').attr('src', 'img/arrowiconYellow.png');
+//build the mother page(home page) so it sets a size presidence.
+jQuery(".mother").css({
+    'background-size': screenWidth + 'px ' + screenHeight + 'px',
+    'width': screenWidth + 'px',
+    'height': screenHeight + 'px'
 
-    //handler for when a user clicks on a link on the home page
-    jQuery('.link').on('touchestart, click', function() {
+});
+
+//change how the home button looks, because I was too lazy to do a find and replace and it seemed to be changing a lot.
+jQuery('.homeButton').attr('src', 'img/arrowiconYellow.png');
+
+//handler for when a user clicks on a link on the home page
+jQuery('.link').on('touchend, click', function() {
+
+    page = jQuery(this).attr('name');
+    console.log(t);
+    if (linkPage != page) {
+        t = 0;
+    }
+    if (t === 0) {
+        gotoPage(page, "mother");
+        t = 1;
+        linkPage = page;
+    } else {
+        t = 0;
+    }
+});
+
+//handler for when a user clicks home on the sticky bar.
+jQuery('.realYellowBar').on('touchstart click', function() {
+
+    page = jQuery(this).find(".escape2").attr('name');
+    if (yellowPage != page) {
+        k = 0;
+    }
+    if (k === 0) {
+        escapeHome(page);
+        k += 1;
+        yellowPage = page;
+    } else {
+        k = 0;
+    }
+    //console.log(yellowPage);
+});
+
+//hander for when user clicks homebutton.
+jQuery('.escape').unbind();
+jQuery('.escape').on("touchstart click", function(event) {
+    if (i === 0) {
         page = jQuery(this).attr('name');
-        currentPage = "mother";
-        gotoPage(page, currentPage);
-    });
-
-    //handler for when a user clicks home on the sticky bar.
-    jQuery('.realYellowBar').on('touchstart click', function() {
-        page = jQuery(this).find(".escape2").attr('name');
         escapeHome(page);
-    });
-
-    //hander for when user clicks homebutton.
-    jQuery('.escape, .escape2').on("touchstart click", function() {
-        page = jQuery(this).attr('name');
-        escapeHome(page);
-    });
-
+        i += 1;
+        t = 0;
+    } else {
+        i = 0;
+    }
+    //console.log(i);
 
 
-    //handler for when user swipes right
-    jQuery(".page").on("swiperight", function() {
-        page = jQuery(this).attr('class').split(" ")[0];
-        escapeHome(page);
-    });
-
-    //handler for when a user swipes left
-    jQuery(".page").on("swipeleft", function() {
-        var nextPage = jQuery(this).attr("data-next");
-        var currentPage = jQuery(this).attr('class').split(" ")[0];
-        gotoPage(nextPage, currentPage);
-    });
-
-    //handler for when  user touches a speaker
-    jQuery('.speaker').on('touchstart', function() {
-        jQuery(this).find('.speakerName').toggle("slide", {
-            easing: "swing",
-            direction: "right"
-
-        });
-    });
+});
 
 
-    //this is bootstrap modal stuff and also the button to launch to the tix site
-    jQuery('.ticketModel').on('touchstart click', function() {
-        jQuery('#ticketModel').modal({
-            backdrop: false
-        });
-    });
-    jQuery('.priButton').on('touchstart click', function() {
-        console.log('click');
 
-        var link = document.getElementById('tixLink'),
-            event = document.createEvent('HTMLEvents');
+//handler for when user swipes right
+jQuery(".page").on("swiperight", function() {
+    page = jQuery(this).attr('class').split(" ")[0];
+    escapeHome(page);
+    t = 0;
+});
 
-        event.initEvent('click', true, true);
-        link.dispatchEvent(event);
+//handler for when a user swipes left
+jQuery(".page").on("swipeleft", function() {
+    var nextPage = jQuery(this).attr("data-next");
+    var currentPage = jQuery(this).attr('class').split(" ")[0];
+    gotoPage(nextPage, currentPage);
+    t = 0;
+});
+
+//handler for when  user touches a speaker
+jQuery('.speaker').on('touchstart', function() {
+    jQuery(this).find('.speakerName').toggle("slide", {
+        easing: "swing",
+        direction: "right"
 
     });
+
+});
+
+
+//this is bootstrap modal stuff and also the button to launch to the tix site
+jQuery('.ticketModel').on('touchstart click', function() {
+    jQuery('#ticketModel').modal({
+        backdrop: false
+    });
+});
+jQuery('.priButton').on('touchstart click', function() {
+    //console.log('click');
+
+    var link = document.getElementById('tixLink'),
+        event = document.createEvent('HTMLEvents');
+
+    event.initEvent('click', true, true);
+    link.dispatchEvent(event);
 
 });
