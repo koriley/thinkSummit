@@ -22,7 +22,7 @@ function gotoPage(nextPage, currentPage) {
         easing: "linear",
         direction: "right"
 
-    }, 500);
+    }, 300);
 
 
 
@@ -89,14 +89,14 @@ function escapeHome(page) {
         easing: "linear",
         direction: "left"
 
-    }, 500);
+    }, 300);
     //jQuery('.mother').css({'position':'inherit'});
     //console.log(num);
     jQuery("." + page).toggle("slide", {
         easing: "linear",
         direction: "right"
 
-    }, 500);
+    }, 300);
     if (jQuery(".realYellowBar").hasClass('yellowStick')) {
         jQuery(".realYellowBar").removeClass('yellowStick').addClass('yellowUnStick');
     }
@@ -162,7 +162,7 @@ jQuery(".mother").css({
 jQuery('.homeButton').attr('src', 'img/arrowiconYellow.png');
 
 //handler for when a user clicks on a link on the home page
-jQuery('.link').on('touchend, click', function() {
+jQuery('.link').on('touchstart, click', function() {
 
     page = jQuery(this).attr('name');
     console.log(t);

@@ -151,8 +151,19 @@ ul {
     font-family: $oswald;
 }
 
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url('../img/spiffygif_90x90.gif') 50% 50% no-repeat rgb(255,255,255);
+  
+}
+
 .mother {
-    background: url('../img/HOMEPhoto2.jpg');
+    background: url('../img/HOMEPhoto3.jpg');
     background-size: 375px 100%;
     background-repeat: no-repeat;
     width: 400px;
@@ -164,7 +175,7 @@ ul {
 
     .header {
         img {
-            width: 375px;
+            width: 100%;
         }
     }
 
@@ -207,6 +218,9 @@ ul {
 
     .header {
         @include headerStyles(75px, 10px, 255px);
+        @media screen and (max-width:320px){
+        @include headerStyles(75px, 55px, 200px);
+    }
     }
 
     .detailMother {
@@ -243,6 +257,9 @@ ul {
 
     .header {
         @include headerStyles(10px, 10px, 255px);
+        @media screen and (max-width:320px){
+        @include headerStyles(75px, 55px, 200px);
+    }
     }
 
     .agendaMother {

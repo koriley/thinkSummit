@@ -49,6 +49,7 @@ header("Expires: Thu, 01 Jan 1970 00:00:01 GMT");
     <body>
         <div class="blackOut" style="">This app is made for portrait mode.</div>
         <div class="yellowUnStick realYellowBar"></div>
+        <div class="loader"></div>
         <!--[if lt IE 8]>
                 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
             <![endif]-->
@@ -603,12 +604,14 @@ header("Expires: Thu, 01 Jan 1970 00:00:01 GMT");
 
 
 
-
+        jQuery(window).load(function() {
+        	jQuery(".loader").fadeOut("slow");
+        });
 
             // Initial execution if needed
 
             if (screenWidth >= 750) {
-                //window.location.replace("http://www.biz417.com/Think-Summit/index.php");
+                window.location.replace("http://www.biz417.com/Think-Summit/index.php");
             }
             //this is a script I found on the internet to stop zooming
             //Apple, in iOS10, has decided to ignore 'user-scalable=no'
