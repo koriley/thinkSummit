@@ -43,17 +43,27 @@ $smallScreen: 500px;
         right: 15px;
         z-index: 75;
         //display: none;
+        @media screen and (max-width:320px) {
+            right: 55px;
+        }
+
         img {
             width: 55px;
         }
     }
 
     .yellowBar {
+        position: relative;
+        left: 0;
+        right: 0;
         width: 100%;
         height: 60px;
         background: $thinkYellow;
         text-align: center;
         z-index: 69;
+        @media screen and (max-width:320px) {
+            width: 350px;
+        }
 
         img {
             width: 170px;
@@ -83,10 +93,23 @@ ul {
         background: #286090;
         text-shadow: none;
         color: white;
+        width: 100%;
 
         &:hover {
             background: #286090;
             text-shadow: none;
+        }
+
+        &:visited {
+            color: white;
+        }
+
+        &:link {
+            color: white;
+        }
+
+        &:active {
+            color: white;
         }
     }
 }
@@ -152,14 +175,13 @@ ul {
 }
 
 .loader {
-	position: fixed;
-	left: 0px;
-	top: 0px;
-	width: 100%;
-	height: 100%;
-	z-index: 9999;
-	background: url('../img/spiffygif_90x90.gif') 50% 50% no-repeat rgb(255,255,255);
-  
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('../img/spiffygif_90x90.gif') 50% 50% no-repeat rgb(255,255,255);
 }
 
 .mother {
@@ -185,6 +207,9 @@ ul {
 
             &:nth-child(1) {
                 padding-top: 15px;
+                  @media screen and (max-width:360px) {
+                  padding-top:5px;
+                }
             }
 
             &:nth-child(even) {
@@ -195,6 +220,12 @@ ul {
                 width: 170px;
                 margin-left: 25px;
                 margin-bottom: 5px;
+                @media screen and (max-width:320px) {
+                  width: 135px;
+                }
+                @media screen and (max-width:360px) {
+                  width: 155px;
+                }
             }
         }
     }
@@ -210,6 +241,10 @@ ul {
         position: fixed;
         bottom: 25px;
         right: 15px;
+        @media screen and (max-width:360px) {
+          right: 5px;
+          margin-right:0px;
+        }
     }
 }
 
@@ -218,9 +253,9 @@ ul {
 
     .header {
         @include headerStyles(75px, 10px, 255px);
-        @media screen and (max-width:320px){
-        @include headerStyles(75px, 55px, 200px);
-    }
+        @media screen and (max-width:320px) {
+             @include headerStyles(75px, 55px, 200px);
+        }
     }
 
     .detailMother {
@@ -238,28 +273,14 @@ ul {
     }
 }
 
-.tickets {
-    @include parentStyle;
-
-    .header {
-        @include headerStyles(75px, 10px, 255px);
-    }
-
-    .ticketMother {
-        //  text-align:center;
-        //margin-top: 275px;
-        margin-left: 10px;
-    }
-}
-
 .agenda {
     @include parentStyle;
 
     .header {
         @include headerStyles(10px, 10px, 255px);
-        @media screen and (max-width:320px){
-        @include headerStyles(75px, 55px, 200px);
-    }
+        @media screen and (max-width:320px) {
+             @include headerStyles(75px, 55px, 200px);
+        }
     }
 
     .agendaMother {
@@ -311,7 +332,7 @@ ul {
     @include parentStyle;
 
     .header {
-        @include headerStyles(75px, 175px, 195px);
+        @include headerStyles(75px, 155px, 165px);
     }
 
     .speakerProfiles {
@@ -323,6 +344,8 @@ ul {
         margin-bottom: 10px;
         text-align: center;
         //border:1px solid red;
+        @media screen and (max-width:320px) {}
+
         .speaker {
             margin-top: 20px;
             margin-bottom: 20px;
@@ -355,6 +378,10 @@ ul {
                     background: rgba(237,233,41, 0.9);
                     position: absolute;
                     top: 0;
+                    @media screen and (max-width:320px) {
+                        width: 135px !important;
+                        //height: 100px !important;
+                    }
 
                     .innerText {
                         position: relative; //top:175px;
@@ -393,6 +420,22 @@ ul {
                     }
                 }
             }
+            @media screen and (max-width:320px) {
+                width: 135px !important;
+                //height: 100px !important;
+                margin: 5px;
+
+                .img {
+                    width: inherit;
+                    height: inherit;
+                    //  background: #f8d2a6;
+                    position: relative;
+
+                    img {
+                        width: 135px;
+                    }
+                }
+            }
         }
     }
 }
@@ -417,8 +460,12 @@ ul {
             flex-wrap: wrap;
             -webkit-flex-flow: row wrap;
             justify-content: space-around;
-            .sponsorImg{
-              width:180px;
+
+            .sponsorImg {
+                width: 180px;
+                img{
+                  width:180px;
+                }
             }
         }
 
@@ -439,6 +486,12 @@ ul {
                 letter-spacing: 2px;
                 margin-right: 5px;
                 margin-bottom: 15px;
+            }
+            .presentedByImg{
+              width:100%;
+              img{
+                width:100%;
+              }
             }
         }
 

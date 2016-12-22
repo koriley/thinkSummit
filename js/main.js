@@ -122,16 +122,16 @@ window.addEventListener('orientationchange', doOnOrientationChange);
 doOnOrientationChange();
 
 
-addToHomescreen.removeSession();
+//addToHomescreen.removeSession();
 addToHomescreen({
-    maxDisplayCount: 0,
+    maxDisplayCount: 1,
     mandatory: false
 });
 
-var screenWidth = jQuery(window).width();
-var screenHeight = jQuery(window).height();
+var screenWidth = jQuery(document).width();
+var screenHeight = jQuery(document).height();
 
-
+//alert(screenWidth);
 var yellowImage;
 var escapeMe;
 var i = 0;
@@ -146,7 +146,7 @@ var linkPage = undefined;
 var page;
 jQuery(".page").each(function() {
     jQuery(this).css({
-        'height': screenHeight + 'px'
+        'height': screenHeight + 'px', 'width':screenWidth+'px'
     });
 });
 
@@ -245,13 +245,13 @@ jQuery('.ticketModel').on('touchstart click', function() {
         backdrop: false
     });
 });
-jQuery('.priButton').on('touchstart click', function() {
-    //console.log('click');
-
-    var link = document.getElementById('tixLink'),
-        event = document.createEvent('HTMLEvents');
-
-    event.initEvent('click', true, true);
-    link.dispatchEvent(event);
-
-});
+// jQuery('.priButton').on('touchstart click', function() {
+//     //console.log('click');
+//
+//     var link = document.getElementById('tixLink'),
+//         event = document.createEvent('HTMLEvents');
+//
+//     event.initEvent('click', true, true);
+//     link.dispatchEvent(event);
+//
+// });
